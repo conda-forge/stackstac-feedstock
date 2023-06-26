@@ -1,11 +1,11 @@
-About stackstac
-===============
+About stackstac-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/stackstac-feedstock/blob/main/LICENSE.txt)
 
 Home: https://stackstac.readthedocs.io/en/latest/index.html
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/stackstac-feedstock/blob/main/LICENSE.txt)
 
 Summary: Load a STAC collection into xarray with dask
 
