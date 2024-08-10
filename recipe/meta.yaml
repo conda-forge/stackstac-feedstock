@@ -1,5 +1,5 @@
 {% set name = "stackstac" %}
-{% set version = "0.5.0" %}
+{% set version = "0.5.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/stackstac-{{ version }}.tar.gz
-  sha256: d3174e7eda6ea97807961c9c8bf7e2d1c73d5b7135b14244e4080ed2a605e67a
+  sha256: 1af0e1251100fe506b1f3c035ffcc34111ad67b264275d14a6775c4991e5f7f6
 
 build:
   number: 0
@@ -21,6 +21,8 @@ requirements:
     - pip
     - pdm-pep517
   run:
+    - numpy <3,>1.23
+    - pandas <3,>=2
     - python >=3.8,<4.0
     - dask-core >=2022.1.1
     - pyproj <4.0.0,>=3.0.0
