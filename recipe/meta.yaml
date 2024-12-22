@@ -7,23 +7,23 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/stackstac-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/stackstac-{{ version }}.tar.gz
   sha256: 1af0e1251100fe506b1f3c035ffcc34111ad67b264275d14a6775c4991e5f7f6
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3.8,<4.0
+    - python {{ python_min }}
     - pip
     - pdm-pep517
   run:
     - numpy <3,>1.23
     - pandas <3,>=2
-    - python >=3.8,<4.0
+    - python >={{ python_min }},<4.0
     - dask-core >=2022.1.1
     - pyproj <4.0.0,>=3.0.0
     - rasterio <2.0.0,>=1.3.0
@@ -36,6 +36,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://stackstac.readthedocs.io/en/latest/index.html
